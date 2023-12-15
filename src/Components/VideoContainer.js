@@ -1,29 +1,31 @@
-import { useEffect, useState } from "react";
-import { Youtube_API } from "../utils/constant";
+import { useSelector } from "react-redux";
+import usePopularVideos from "../hooks/usePopularVideos";
 import VideoCart from "./VideoCart";
 import { Link } from "react-router-dom";
 
-const VideoContainer = () => {
-  const [videos, setVideos] = useState(null);
-  useEffect(() => {
-    getVideos();
-  }, []);
+const VideoContainer = ({ type }) => {
+  const popularVideos = useSelector((store) => store.video.popularVideos);
+  usePopularVideos();
 
-  const getVideos = async () => {
-    const data = await fetch(Youtube_API);
-    const json = await data.json();
-    setVideos(json.items);
-  };
-
-  if (!videos) {
+  if (popularVideos.length === 0 || !popularVideos) {
     return;
   }
 
   return (
-    <div className="py-2.5 flex gap-y-4 gap-x-2 flex-wrap">
-      {videos.map((video) => (
-        <Link key={video?.id} to={"/watch?v=" + video.id}>
-          <VideoCart info={video} />
+    <div
+      className={
+        type
+          ? " w-full  py-1 gap-y-2.5 flex flex-wrap"
+          : "py-2.5 flex gap-y-4 gap-x-2 flex-wrap"
+      }
+    >
+      {popularVideos.map((video) => (
+        <Link
+          className={type && "w-full"}
+          key={video?.id}
+          to={"/watch?v=" + video.id}
+        >
+          <VideoCart info={video} type={type} />
         </Link>
       ))}
     </div>
