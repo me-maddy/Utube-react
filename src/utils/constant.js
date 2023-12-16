@@ -42,3 +42,102 @@ export const Youtube_API =
 
 export const Youtube_Search_Suggestion_API =
   "https://suggestqueries.google.com/complete/search?client=youtube&ds=yt&q=";
+
+export const comments = [
+  {
+    name: "Mohit Kumar",
+    text: "Amazing ❤️",
+    replies: [
+      {
+        name: "Manjeet Gahlot",
+        text: "Incredible one that I have ever seen on internet.",
+        replies: [
+          {
+            name: "Himanshu Kumar",
+            text: "Same as raghvan kumari's comment❤️",
+            replies: [
+              {
+                name: "Raja Sagar",
+                text: "Love it❤️",
+                replies: [
+                  {
+                    name: "Himanshu Kumar",
+                    text: "Same as raghvan kumari's comment❤️",
+                    replies: [],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Raghvan Kumar",
+        text: "It is like the one which gives an important thing that's 'hope😇'",
+        replies: [],
+      },
+    ],
+  },
+  {
+    name: "Manjeet Gahlot",
+    text: "Incredible one that I have ever seen on internet.",
+    replies: [],
+  },
+  {
+    name: "Raghvan Kumar",
+    text: "It is like the one which gives an important thing that's 'hope😇'",
+    replies: [
+      {
+        name: "Raja Sagar",
+        text: "Love it❤️",
+        replies: [
+          {
+            name: "Himanshu Kumar",
+            text: "Same as raghvan kumari's comment❤️",
+            replies: [
+              {
+                name: "Prerna Aarya",
+                text: "This gives me an inspiration ",
+                replies: [],
+              },
+            ],
+          },
+        ],
+      },
+
+      {
+        name: "Himanshu Kumar",
+        text: "Same as raghvan kumari's comment❤️",
+        replies: [],
+      },
+      { name: "Bhumi Dodwani", text: "Nice one 👍", replies: [] },
+    ],
+  },
+  { name: "Raja Sagar", text: "Love it❤️", replies: [] },
+  { name: "Prerna Aarya", text: "This gives me an inspiration ", replies: [] },
+  {
+    name: "Bhumi Dodwani",
+    text: "Nice one 👍",
+    replies: [
+      {
+        name: "Raja Sagar",
+        text: "Love it❤️",
+        replies: [
+          {
+            name: "Prerna Aarya",
+            text: "This gives me an inspiration ",
+            replies: [
+              {
+                name: "Himanshu Kumar",
+                text: "Same as raghvan kumari's comment❤️",
+                replies: [
+                  { name: "Bhumi Dodwani", text: "Nice one 👍", replies: [] },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+];
