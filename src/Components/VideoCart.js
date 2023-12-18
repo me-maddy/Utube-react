@@ -1,16 +1,19 @@
 import { useSelector } from "react-redux";
+import { getMinimizedNum } from "../utils/helper";
 
 const VideoCart = ({ info, type }) => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
   const { snippet, statistics } = info;
   const { channelTitle, title, thumbnails } = snippet;
 
+  const views = getMinimizedNum(statistics?.viewCount);
+
   return (
     <div
       className={
         type
           ? " cursor-pointer  grid grid-flow-col gap-x-2 w-full"
-          : `py-3 cursor-pointer hover:shadow transition-shadow duration-150 ease-in-out px-3 m-2 shadow-lg ${
+          : ` cursor-pointer mr-2 my-2 ${
               isMenuOpen ? "w-[360px]" : "w-[412px]"
             } `
       }
@@ -42,19 +45,26 @@ const VideoCart = ({ info, type }) => {
             ? title.slice(0, 46) + "..."
             : title}
         </li>
+        <div className="flex gap-x-1.5">
+          <img
+            src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"
+            alt="User"
+            className="h-6 cursor-pointer"
+          />
+          <li
+            className={`text-gray-600 font-medium ${
+              type ? "text-sm" : "text-base"
+            }`}
+          >
+            {channelTitle}
+          </li>
+        </div>
         <li
-          className={`text-gray-600 font-medium ${
+          className={`text-gray-600 ml-[30px] font-medium ${
             type ? "text-sm" : "text-base"
           }`}
         >
-          {channelTitle}
-        </li>
-        <li
-          className={`text-gray-600 font-medium ${
-            type ? "text-sm" : "text-base"
-          }`}
-        >
-          {statistics?.viewCount} views
+          {views} views
         </li>
       </ul>
     </div>

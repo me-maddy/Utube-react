@@ -16,7 +16,7 @@ const VideoContainer = ({ type }) => {
       className={
         type
           ? " w-full  py-1 gap-y-2.5 flex flex-wrap"
-          : "py-2.5 flex gap-y-4 gap-x-2 flex-wrap"
+          : "py-2.5 w-full flex gap-y-4 gap-x-2 flex-wrap"
       }
     >
       {popularVideos.map((video) => (

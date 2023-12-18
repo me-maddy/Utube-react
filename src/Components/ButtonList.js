@@ -3,8 +3,8 @@ import { buttonNames } from "../utils/constant";
 
 const ButtonList = () => {
   return (
-    <div className="overflow-hidden">
-      <div className="flex gap-x-3 ">
+    <div className="w-full overflow-hidden">
+      <div className="flex overflow-hidden  gap-x-3 ">
         {buttonNames.map((name) => (
           <Button key={name} name={name} />
         ))}

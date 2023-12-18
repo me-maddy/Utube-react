@@ -1,36 +1,50 @@
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
+
+const List = ({ title, children }) => {
+  return (
+    <li className="pl-4 py-1.5 cursor-pointer transition-all duration-200 rounded-lg ease-linear hover:bg-gray-100">
+      {children ? children : title}
+    </li>
+  );
+};
 
 const SideBar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
+  const [searchParams] = useSearchParams();
+  const id = searchParams.get("v");
   if (!isMenuOpen) return null;
   return (
-    <div className="w-48 shadow-lg px-2 pb-4">
-      <ul className="flex flex-col gap-y-2  p-4">
-        <li>
+    <div
+      className={`w-48 shadow-lg pt-2.5 px-3  pb-4 ${
+        id && "absolute bg-white min-h-screen pb-[100rem] h-max"
+      }`}
+    >
+      <ul className="flex flex-col py-2 gap-y-2">
+        <List>
           <Link to="/">Home</Link>
-        </li>
-        <li>Shorts</li>
-        <li>Subscriptions</li>
+        </List>
+        <List title={"Shorts"} />
+        <List title={"Subscriptions"} />
       </ul>
       <hr />
-      <ul className="flex flex-col gap-y-2  p-4">
-        <li>Your channel</li>
-        <li>History</li>
-        <li>Your videos</li>
-        <li>Watch later</li>
-        <li>Downloads</li>
-        <li>Show More</li>
+      <ul className="flex flex-col py-2 gap-y-2 ">
+        <List title={"Your channel"} />
+        <List title={"History"} />
+        <List title={"Your videos"} />
+        <List title={"Watch later"} />
+        <List title={"Downloads"} />
+        <List title={"Show More"} />
       </ul>
       <hr />
-      <h1 className="pt-4 pb-2 px-2.5 font-bold">Subscriptions</h1>
-      <ul className="flex flex-col gap-y-2  px-4">
-        <li>Chai and code</li>
-        <li>Nitish Rajput</li>
-        <li>Code with harry</li>
-        <li>Physics Wallah</li>
-        <li>Harsh Vashisht</li>
-        <li>Akshay Saini</li>
+      <h1 className="pt-4 px-2.5 font-bold">Subscriptions</h1>
+      <ul className="flex flex-col py-2 gap-y-2 ">
+        <List title={"Chai aur code"} />
+        <List title={"Nitish Rajput"} />
+        <List title={"Code with harry"} />
+        <List title={"Physics Wallah"} />
+        <List title={"Harsh Vashisth"} />
+        <List title={"Akshay Saini"} />
       </ul>
     </div>
   );

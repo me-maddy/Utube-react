@@ -5,33 +5,23 @@ import useCloseMenu from "../hooks/useCloseMenu";
 import useGetVideoById from "../hooks/useGetVideoById";
 import VideoDetails from "./VideoDetails";
 import CommentsContainer from "./CommentsContainer";
+import LiveChat from "./LiveChat";
+import { getMinimizedNum } from "../utils/helper";
 
 const WatchPage = () => {
   useCloseMenu();
   const [searchParams] = useSearchParams();
   const id = searchParams.get("v");
-  const { snippet, statistics } = useGetVideoById(id);
+  const videoDetails = useGetVideoById(id);
+  if (!videoDetails) return;
+
+  const { snippet, statistics } = videoDetails;
   const { likeCount, viewCount, commentCount } = statistics;
   const { publishedAt, description, title, channelTitle } = snippet;
   const descArray = description.split("\n\n");
   const publishedDate = publishedAt.split("T")[0];
 
-  const getLikeCount = (like) => {
-    let count;
-
-    if (like < 1000) {
-      count = like;
-      return count;
-    } else if (like < 1000000) {
-      count = (like / 1000).toFixed(1) + "K";
-      return count;
-    } else {
-      count = (like / 1000000).toFixed(1) + "M";
-      return count;
-    }
-  };
-
-  const likes = getLikeCount(likeCount);
+  const likes = getMinimizedNum(likeCount);
   const details = {
     title,
     likes,
@@ -61,6 +51,7 @@ const WatchPage = () => {
       {/* Recommended  Section */}
       <div className="w-[34%] overflow-hidden">
         <ButtonList />
+        <LiveChat />
         <VideoContainer type="watch-page" />
       </div>
     </div>
