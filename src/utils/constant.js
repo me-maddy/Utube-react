@@ -1,24 +1,3 @@
-// export const buttonNames = [
-//   "All",
-//   "Mixes",
-//   "Music",
-//   "Computer programming",
-//   "Mantras",
-//   "Lo-fi",
-//   "Stock markets",
-//   "Startup company",
-//   "Podcasts",
-//   "Live",
-//   "Playlists",
-//   "Sales",
-//   "Debates",
-//   "Bollywood Music",
-//   "Comedy",
-//   "Recently uploaded",
-//   "Watched",
-//   "Next to you",
-// ];
-
 export const buttonNames = [
   "All",
   "Mixes",
