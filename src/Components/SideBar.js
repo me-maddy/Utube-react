@@ -3,7 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 
 const List = ({ title, children }) => {
   return (
-    <li className="pl-4 py-1.5 cursor-pointer transition-all duration-200 rounded-lg ease-linear hover:bg-gray-100">
+    <li className="pl-4 py-1.5 cursor-pointer transition-all duration-150 rounded-lg ease-linear hover:bg-gray-200">
       {children ? children : title}
     </li>
   );
@@ -16,7 +16,7 @@ const SideBar = () => {
   if (!isMenuOpen) return null;
   return (
     <div
-      className={`w-48 shadow-lg pt-2.5 px-3  pb-4 ${
+      className={`w-48 hidden sm:inline-block shadow-lg pt-2.5 px-3  pb-4 ${
         id && "absolute bg-white min-h-screen pb-[100rem] h-max"
       }`}
     >
