@@ -26,7 +26,7 @@ const LiveChat = () => {
   }, []);
 
   return (
-    <div className="w-full bg-slate-100 rounded-lg mb-4 relative">
+    <div className="w-full bg-slate-100 rounded-lg mt-4 mb-4 relative">
       {showLiveChat && (
         <>
           <h3 className="shadow-md border-b border-slate-300 border-solid p-2 w-full align-middle font-medium text-base">
@@ -34,7 +34,7 @@ const LiveChat = () => {
             Top live comments
           </h3>
           <div className="w-full relative h-[402px]">
-            <div className="flex p-2 pt-3 overflow-y-scroll absolute bottom-0 w-full  flex-col-reverse h-[400px]">
+            <div className="flex p-2 pt-2 lg:pt-3 overflow-y-scroll absolute bottom-0 w-full  flex-col-reverse h-[400px]">
               {messageDetails.map((detail, index) => (
                 <LiveChatMessage
                   key={index}
@@ -66,7 +66,7 @@ const LiveChat = () => {
               value={chat}
               onChange={(e) => setChat(e.target.value)}
             />
-            <button className="ml-3 px-2 py-1.5 hover:bg-white transition-all duration-150 ease-linear  rounded-full">
+            <button className="lg:ml-3 ml-1.5 px-2 py-1.5 hover:bg-white transition-all duration-150 ease-linear  rounded-full">
               <img
                 src="https://cdn-icons-png.flaticon.com/512/3106/3106794.png"
                 alt="send-icon"
@@ -76,9 +76,9 @@ const LiveChat = () => {
           </form>
         </>
       )}
-      <div className="p-1.5">
+      <div className="p-1.5 sm:text-lg text-base">
         <p
-          className="w-full rounded-full py-1.5 cursor-pointer text-center hover:bg-white transition-all duration-200 ease-linear"
+          className="w-full rounded-full py-1 sm:py-1.5 cursor-pointer text-center hover:bg-white transition-all duration-200 ease-linear"
           onClick={() => setShowLiveChat(!showLiveChat)}
         >
           {showLiveChat ? "Hide chat" : "Show chat"}
