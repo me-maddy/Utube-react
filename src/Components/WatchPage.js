@@ -32,11 +32,10 @@ const WatchPage = () => {
   };
 
   return (
-    <div className="w-full gap-x-7 px-8 flex py-6">
+    <div className="w-full gap-x-4 lg:gap-x-7 px-5 flex-col md:flex-row lg:px-8 flex py-6">
       {/* Video Watch Section */}
-      <div className="w-[66%]">
+      <div className=" w-full md:w-[66%]">
         <iframe
-          width="560"
           src={"https://www.youtube.com/embed/" + id + "?autoplay=1"}
           title="YouTube video player"
           frameBorder="0"
@@ -49,7 +48,7 @@ const WatchPage = () => {
       </div>
 
       {/* Recommended  Section */}
-      <div className="w-[34%] overflow-hidden">
+      <div className="md:w-[34%] w-full overflow-hidden">
         <ButtonList />
         <LiveChat />
         <VideoContainer type="watch-page" />
