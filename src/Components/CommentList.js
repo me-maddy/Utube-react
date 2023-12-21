@@ -8,7 +8,7 @@ const CommentList = ({ comments }) => {
           <div key={index}>
             <Comment comment={comment} key={index} />
             {comment.replies.length > 0 && (
-              <div className="ml-10 ">
+              <div className="ml-5 sm:ml-10 ">
                 <CommentList comments={comment.replies} />
               </div>
             )}
