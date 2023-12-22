@@ -1,6 +1,6 @@
 const Cart = () => {
   return (
-    <div className="w-full bg-gray-300 rounded-lg animate-pulse h-60 md:h-72"></div>
+    <div className="w-full bg-gray-300 dark:bg-neutral-700 rounded-lg animate-pulse h-60 md:h-72"></div>
   );
 };
 

@@ -13,6 +13,23 @@ export const buttonNames = [
   "Next to you",
 ];
 
+export const Light_Like_Thumb =
+  "https://toppng.com/uploads/thumbnail/like-thumb-up-vote-comments-vote-icon-11563607354hfsitrepaa.png";
+
+export const Dark_Like_Thumb =
+  "https://www.freeiconspng.com/thumbs/like-icon-png/white-like-icon-png-20.png";
+
+export const Light_Unlike_Thumb =
+  "https://cdn-icons-png.flaticon.com/512/20/20661.png";
+
+export const Dark_Unlike_Thumb = "https://pngimg.com/d/dislike_PNG27.png";
+
+export const Light_User_Icon =
+  "https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png";
+
+export const Dark_User_Icon =
+  "https://cdn-icons-png.flaticon.com/512/149/149071.png";
+
 const My_Youtube_Api_Key = process.env.REACT_APP_YOUTUBE_API_KEY;
 
 export const Youtube_API =

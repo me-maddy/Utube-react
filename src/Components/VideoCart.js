@@ -1,8 +1,11 @@
+import { useSelector } from "react-redux";
+import { Dark_User_Icon, Light_User_Icon } from "../utils/constant";
 import { getMinimizedNum } from "../utils/helper";
 
 const VideoCart = ({ info, type }) => {
   const { snippet, statistics } = info;
   const { channelTitle, title, thumbnails } = snippet;
+  const theme = useSelector((store) => store.app.theme);
 
   const views = getMinimizedNum(statistics?.viewCount);
 
@@ -23,11 +26,14 @@ const VideoCart = ({ info, type }) => {
       <ul className={type ? "w-full " : "mt-2"}>
         {" "}
         <li
-          className={
-            type
-              ? "text-sm xl:text-base font-medium"
-              : "text-sm sm:text-base lg:text-lg font-semibold"
-          }
+          className={` dark:text-white 
+            ${
+              type
+                ? "text-sm xl:text-base font-medium"
+                : "text-sm sm:text-base lg:text-lg font-semibold"
+            }
+              
+          `}
         >
           {type
             ? title.length > 30
@@ -39,14 +45,14 @@ const VideoCart = ({ info, type }) => {
         </li>
         <div className="flex  items-center gap-x-1 sm:gap-x-1.5">
           <img
-            src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"
+            src={theme === "light" ? Light_User_Icon : Dark_User_Icon}
             alt="User"
             className={
               type ? "lg:h-6 h-5 cursor-pointer" : "h-6 cursor-pointer"
             }
           />
           <li
-            className={`text-gray-600 font-medium ${
+            className={`text-gray-600 dark:text-gray-400 font-medium ${
               type ? "text-xs xl:text-sm" : "sm:text-sm text-xs lg:text-base"
             }`}
           >
@@ -54,7 +60,7 @@ const VideoCart = ({ info, type }) => {
           </li>
         </div>
         <li
-          className={`text-gray-600  font-medium ${
+          className={`dark:text-gray-400 text-gray-600  font-medium ${
             type
               ? "text-xs xl:text-sm ml-[26px] lg:ml-[30px]"
               : "sm:text-sm text-xs  lg:text-base ml-7 sm:ml-[30px] "
