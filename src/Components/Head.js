@@ -154,7 +154,7 @@ const Head = () => {
 
         <div
           className="md:w-16 min-[450px]:w-12 h-5 w-10 min-[450px]:h-6  flex relative items-center rounded-2xl md:h-8
-             bg-neutral-500 dark:bg-white
+             bg-neutral-400 dark:bg-white
            "
         >
           <input
@@ -166,7 +166,7 @@ const Head = () => {
           />
           <label
             htmlFor="dark-mode"
-            className={`md:w-7 h-4 w-4 md:h-7 min-[450px]:h-5 min-[450px]:w-5 transition-all duration-300 ease-in-out cursor-pointer rounded-full absolute bg-gray-100 dark:bg-neutral-800 ${
+            className={`md:w-7 h-4 w-4 md:h-7 min-[450px]:h-5 min-[450px]:w-5 transition-all duration-300 ease-in-out cursor-pointer rounded-full absolute bg-gray-100 dark:bg-neutral-600 ${
               isChecked ? "right-[2px]" : "left-[2px]"
             }`}
           ></label>

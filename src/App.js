@@ -5,7 +5,6 @@ import Head from "./Components/Head";
 import store from "./utils/store";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainContainer from "./Components/MainContainer";
-// import WatchPage from "./Components/WatchPage";
 import { Suspense, lazy } from "react";
 import ShimmerUI from "./Components/ShimmerUI";
 
