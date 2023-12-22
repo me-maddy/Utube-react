@@ -3,7 +3,7 @@ import VideoContainer from "./VideoContainer";
 
 const MainContainer = () => {
   return (
-    <div className="px-3 sm:px-6  w-full py-3 sm:py-5">
+    <div className="px-3 sm:px-6 dark:text-white  w-full py-3 sm:py-5">
       <ButtonList />
       <VideoContainer />
     </div>

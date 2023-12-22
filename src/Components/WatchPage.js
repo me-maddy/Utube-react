@@ -32,7 +32,7 @@ const WatchPage = () => {
   };
 
   return (
-    <div className="w-full gap-x-4 lg:gap-x-7 px-5 flex-col md:flex-row lg:px-8 flex py-6">
+    <div className="w-full dark:text-white gap-x-4 lg:gap-x-7 px-5 flex-col md:flex-row lg:px-8 flex py-6">
       {/* Video Watch Section */}
       <div className=" w-full md:w-[66%]">
         <iframe
