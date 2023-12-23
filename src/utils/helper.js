@@ -2862,9 +2862,9 @@ const last = [
 
 export const generateRandomName = () => {
   return (
-    first[Math.floor(Math.random() * first.length)] +
+    first[Math.floor(Math.random() * first?.length)] +
     " " +
-    last[Math.floor(Math.random() * last.length)]
+    last[Math.floor(Math.random() * last?.length)]
   );
 };
 
@@ -2873,7 +2873,7 @@ export function makeRandomMessage(length) {
   let msg = "";
   const characters =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  const charactersLength = characters.length;
+  const charactersLength = characters?.length;
   let counter = 0;
   while (counter < length) {
     result += characters.charAt(Math.floor(Math.random() * charactersLength));

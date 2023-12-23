@@ -46,7 +46,6 @@ const Head = () => {
     try {
       const data = await fetch(Youtube_Search_Suggestion_API + searchQuery);
       const text = await data.text();
-      console.log(text);
       const textItems = text.split("[");
       const mainText = textItems
         .map((element, index) => {
@@ -91,7 +90,7 @@ const Head = () => {
           className={`bg-transparent h-12 object-cover ${
             theme === "light"
               ? "w-24 min-[400px]:w-28"
-              : "min-[450px]:w-20 w-[60px] min-[450px]:w-16 ml-1  sm:w-28"
+              : "min-[450px]:w-20 w-[60px] ml-1  sm:w-28"
           }`}
         />
       </div>

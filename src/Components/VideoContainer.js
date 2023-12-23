@@ -8,7 +8,7 @@ const VideoContainer = ({ type }) => {
   usePopularVideos();
   const popularVideos = useSelector((store) => store.video.popularVideos);
 
-  if (popularVideos.length === 0 || !popularVideos) {
+  if (popularVideos.length < 1 || !popularVideos) {
     return <ShimmerUI />;
   }
 
@@ -20,7 +20,7 @@ const VideoContainer = ({ type }) => {
           : "py-2.5 w-full grid gap-y-6 gap-x-4 lg:gap-x-5 mt-2.5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4"
       }
     >
-      {popularVideos.map((video) => (
+      {popularVideos?.map((video) => (
         <Link
           className={type && " w-full"}
           key={video?.id}
