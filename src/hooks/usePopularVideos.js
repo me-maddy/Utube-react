@@ -8,6 +8,7 @@ const usePopularVideos = () => {
 
   useEffect(() => {
     getVideos();
+    document.title = "MyUtube";
   }, []);
 
   const getVideos = async () => {
