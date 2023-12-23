@@ -13,7 +13,6 @@ const usePopularVideos = () => {
   const getVideos = async () => {
     const data = await fetch(Youtube_API);
     const json = await data.json();
-    console.log(json?.items);
     dispatch(addPopularVideos(json?.items));
   };
 };
