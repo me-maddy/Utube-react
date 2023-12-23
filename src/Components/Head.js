@@ -124,7 +124,7 @@ const Head = () => {
               {searchSuggestions?.map((suggestion) => (
                 <li
                   key={suggestion}
-                  className="flex items-center py-1 px-2.5 sm:px-4 hover:bg-gray-200 cursor-default"
+                  className="flex items-center py-1 px-2.5 sm:px-4 hover:bg-gray-200 dark:hover:bg-neutral-700 cursor-default"
                 >
                   <img
                     src={
