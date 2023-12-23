@@ -8,7 +8,7 @@ const VideoContainer = ({ type }) => {
   usePopularVideos();
   const popularVideos = useSelector((store) => store.video.popularVideos);
 
-  if (popularVideos.length < 1 || !popularVideos) {
+  if (popularVideos?.length < 1 || !popularVideos) {
     return <ShimmerUI />;
   }
 
